@@ -12,7 +12,7 @@ public class PageModule extends AbstractModule {
 
     @Override
     protected void configure() {
-        log.warn("USING " + System.getProperty("strategy") + " STRATEGY");
+        log.warn("---------USING " + System.getProperty("strategy") + " STRATEGY---------");
         if ("mobile".equals(System.getProperty("strategy"))) {
             bind(AppWelcomePage.class).to(WelcomeGmailPage.class);
             bind(GmailMainPage.class).to(MobileMainPage.class);

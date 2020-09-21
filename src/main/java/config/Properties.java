@@ -24,6 +24,9 @@ public class Properties {
     public static String getLetterFilePath() {
         return PropertyFile.getProperty("letter.file.path");
     }
+    public static String getLogFilePath() {
+        return PropertyFile.getProperty("log.file.path");
+    }
 
     public static String getAppPackage() {
         if ("mobile".equals(System.getProperty("strategy"))) {

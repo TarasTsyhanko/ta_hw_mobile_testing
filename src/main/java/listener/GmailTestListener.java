@@ -1,5 +1,6 @@
 package listener;
 
+import config.Properties;
 import factory.DriverContainer;
 import injection.PageModule;
 import io.qameta.allure.Attachment;
@@ -44,14 +45,14 @@ public class GmailTestListener implements ITestListener {
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
         log.info("I am in onTestSuccess method " + getTestMethodName(iTestResult) + " succeed");
-        getTestOutput(iTestResult);
+        addTestLog(Properties.getLogFilePath());
     }
 
     @Override
     public void onTestFailure(ITestResult tr) {
         addScreenToAllure();
-        getTestOutput(tr);
         log.info("saved screenshot");
+        addTestLog(Properties.getLogFilePath());
     }
 
     @Override
@@ -75,19 +76,13 @@ public class GmailTestListener implements ITestListener {
         return Files.readAllBytes(Paths.get(file.getPath()));
     }
 
-    @Attachment
-    public String getTestOutput(ITestResult result) {
-        List<String> list = Reporter.getOutput(result);
-        StringBuilder builder = new StringBuilder("------Test OutPut Logging:------\n");
-        for (String s : list) {
-            builder.append(s).append("\n");
-        }
-        return builder.toString();
-    }
-
     @Step("Test logs")
-    public static void addTestLog(String path) throws IOException {
-        addFileToAllure(path);
+    public static void addTestLog(String path) {
+        try {
+            addFileToAllure(path);
+        } catch (IOException e) {
+            log.error(e.getMessage());
+        }
     }
 
 }

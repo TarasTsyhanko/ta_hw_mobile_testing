@@ -8,8 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import ui.actions.SendLetterAction;
 import utils.FileReader;
-
-import java.time.LocalTime;
+import utils.Letter;
 
 public class SendLetterTest extends BaseTest {
     @Inject
@@ -18,17 +17,17 @@ public class SendLetterTest extends BaseTest {
     private LetterAsserter letterAsserter;
 
     @Description("log in to gmail and send letter")
-    @Test
+    @Test()
     public void sentLetterTestCase() {
         sendLetterAction.openLoginForm();
         sendLetterAction.logInToAccountGmail(Properties.getLogin(), Properties.getPassword());
-        String textBody = LocalTime.now().toString();
-        sendLetterAction.createAndSendLetter(FileReader.getLetter());
+        Letter letter = FileReader.getLetter();
+        sendLetterAction.createAndSendLetter(letter);
 
         Assert.assertTrue(sendLetterAction.isInformInformMessageDisplayed());
 
         sendLetterAction.openSentLetterList();
         sendLetterAction.openLastSentLetter();
-        letterAsserter.assertLetterTextBody(textBody, sendLetterAction.getLetterTextBody());
+        letterAsserter.assertLetterTextBody(letter.getTextBody(), sendLetterAction.getLetterTextBody());
     }
 }

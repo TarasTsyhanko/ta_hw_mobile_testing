@@ -9,7 +9,11 @@ public class Letter {
     private String recipient;
     private String subject;
     @JsonIgnore
-    private String textBody;
+    private final String textBody;
+
+    {
+        textBody = LocalTime.now().toString();
+    }
 
     public String getRecipient() {
         return recipient;
@@ -20,7 +24,7 @@ public class Letter {
     }
 
     public String getTextBody() {
-        return LocalTime.now().toString();
+        return textBody;
     }
 
     @Override
