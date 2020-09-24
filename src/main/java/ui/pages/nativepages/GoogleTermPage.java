@@ -1,4 +1,4 @@
-package ui.pages.mobile;
+package ui.pages.nativepages;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -20,7 +20,7 @@ public class GoogleTermPage extends AbstractPage {
     private WebElement moreButton;
 
     @FindBy(id = "google_services_tos")
-    private WebElement googleBla;
+    private WebElement googleServiceTitle;
 
     public void acceptGoogleTerms() {
         log.info("accept google term");

@@ -1,4 +1,4 @@
-package ui.pages.desktop;
+package ui.pages.webpages;
 
 import factory.DriverContainer;
 import org.openqa.selenium.WebElement;
@@ -7,7 +7,9 @@ import ui.pages.AbstractPage;
 import ui.pages.AppWelcomePage;
 import utils.Wait;
 
-public class ChromeWelcomePage extends AbstractPage implements AppWelcomePage {
+import static constant.Constants.GMAIL_URL;
+
+public class WebWelcomePage extends AbstractPage implements AppWelcomePage {
 
     @FindBy(id = "terms_accept")
     private WebElement acceptButton;
@@ -24,6 +26,6 @@ public class ChromeWelcomePage extends AbstractPage implements AppWelcomePage {
         acceptButton.click();
         addNewAccountButton.click();
         Wait.forVisibilityOf(searchLogo);
-        DriverContainer.getDriver().get("https://mail.google.com");
+        DriverContainer.getDriver().get(GMAIL_URL);
     }
 }

@@ -1,4 +1,4 @@
-package ui.pages.mobile;
+package ui.pages.webpages;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -8,29 +8,27 @@ import ui.pages.AbstractPage;
 import ui.pages.GmailMainPage;
 import utils.Wait;
 
-public class MobileMainPage extends AbstractPage implements GmailMainPage {
-    private static final Logger log = LogManager.getLogger(MobileMainPage.class);
-
-    @FindBy(id = "compose_button")
+public class WebBasePage extends AbstractPage implements GmailMainPage {
+    private static final Logger log = LogManager.getLogger(WebBasePage.class);
+    @FindBy(xpath = "(//android.widget.Button)[3]")
     private WebElement composeButton;
 
-    @FindBy(id="description_text")
+    @FindBy(xpath = "//*[@text='Надіслано.']")
     private WebElement informMessage;
 
-    @FindBy(className = "android.widget.ImageButton")
+    @FindBy(xpath = "(//android.widget.Button)[1]")
     private WebElement menuPanelButton;
 
-    @FindBy(xpath = "//*[@text='Надіслані']")
+    @FindBy(xpath = "(//android.view.MenuItem)[5]")
     private WebElement sentLettersView;
 
     public String getAccountRegisterMail() {
-        menuPanelButton.click();
-        return null;
+       menuPanelButton.click();
+       return null;
     }
-
     @Override
     public void openSentLetterList() {
-        log.info("open menu by element");
+        log.info("open menu");
         Wait.forVisibilityOf(menuPanelButton).click();
         log.info("open sent letters list");
         Wait.forVisibilityOf(sentLettersView).click();

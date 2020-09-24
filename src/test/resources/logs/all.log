@@ -1,17 +1,1 @@
-04:36:05 [WARN ] i.PageModule:15 - USING desktop STRATEGY
-04:36:32 [INFO ] l.GmailTestListener:32 - I am in onStart method GmailTest
-04:36:32 [INFO ] l.GmailTestListener:42 - I am in onTestStart method sentLetterTestCase start
-04:36:40 [INFO ] u.p.d.DesktopLoginPage:22 - input login'besttesterever12@gmail.com
-04:36:46 [INFO ] u.p.d.DesktopLoginPage:24 - click to element 
-04:36:55 [INFO ] u.p.d.DesktopBasePage:39 - open create letter form
-04:37:06 [INFO ] u.p.d.DesktopCreateLetterPage:26 - input recipient '+tarastsyhanko@gmail.com
-04:37:07 [INFO ] u.p.d.DesktopCreateLetterPage:32 - input subject '+mobile
-04:37:09 [INFO ] u.p.d.DesktopCreateLetterPage:38 - input textBody '+04:36:55.601
-04:37:10 [INFO ] u.p.d.DesktopCreateLetterPage:44 - send letter by click element
-04:37:10 [INFO ] u.p.d.DesktopBasePage:45 - verify is inform message displayed
-04:37:12 [INFO ] u.p.d.DesktopBasePage:31 - open menu
-04:37:13 [INFO ] u.p.d.DesktopBasePage:33 - open sent letters list
-04:37:15 [INFO ] u.p.d.DesktopSentLetterPage:20 - open last sent letter
-04:37:17 [INFO ] u.p.d.DesktopLetterPage:19 - get letter text from element
-04:37:19 [INFO ] l.GmailTestListener:47 - I am in onTestSuccess method sentLetterTestCase succeed
-04:37:20 [INFO ] l.GmailTestListener:37 - I am in onFinish method GmailTest
+19:46:17 [WARN ] i.PageModule:15 - ---------USING desktop STRATEGY---------

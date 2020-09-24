@@ -1,4 +1,4 @@
-package ui.pages.mobile;
+package ui.pages.nativepages;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

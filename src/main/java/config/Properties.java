@@ -29,14 +29,14 @@ public class Properties {
     }
 
     public static String getAppPackage() {
-        if ("mobile".equals(System.getProperty("strategy"))) {
+        if ("native".equals(System.getProperty("strategy"))) {
             return PropertyFile.getProperty("gmail.app.package");
         }
         return PropertyFile.getProperty("chrome.app.package");
     }
 
     public static String getAppActivity() {
-        if ("mobile".equals(System.getProperty("strategy"))) {
+        if ("native".equals(System.getProperty("strategy"))) {
             return PropertyFile.getProperty("gmail.app.activity");
         }
         return PropertyFile.getProperty("chrome.app.activity");

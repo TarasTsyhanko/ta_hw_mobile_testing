@@ -1,4 +1,4 @@
-package ui.pages.desktop;
+package ui.pages.webpages;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -9,8 +9,8 @@ import ui.pages.GmailSentLettersPage;
 
 import java.util.List;
 
-public class DesktopSentLetterPage extends AbstractPage implements GmailSentLettersPage {
-    private static final Logger log = LogManager.getLogger(DesktopSentLetterPage.class);
+public class WebSentLetterPage extends AbstractPage implements GmailSentLettersPage {
+    private static final Logger log = LogManager.getLogger(WebSentLetterPage.class);
 
     @FindBy(xpath = "//android.widget.ListView/android.view.View")
     private List<WebElement> sentMessagesListView;

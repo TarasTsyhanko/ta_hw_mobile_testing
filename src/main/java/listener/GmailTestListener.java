@@ -2,7 +2,6 @@ package listener;
 
 import config.Properties;
 import factory.DriverContainer;
-import injection.PageModule;
 import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;
 import org.apache.logging.log4j.LogManager;
@@ -12,13 +11,11 @@ import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import org.testng.Reporter;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.List;
 
 public class GmailTestListener implements ITestListener {
     private static final Logger log = LogManager.getLogger(GmailTestListener.class);

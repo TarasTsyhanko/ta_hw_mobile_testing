@@ -1,4 +1,4 @@
-package ui.pages.desktop;
+package ui.pages.nativepages;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -7,19 +7,18 @@ import org.openqa.selenium.support.FindBy;
 import ui.pages.AbstractPage;
 import ui.pages.GmailCreateLetterPage;
 
-public class DesktopCreateLetterPage extends AbstractPage implements GmailCreateLetterPage {
-    private static final Logger log = LogManager.getLogger(DesktopCreateLetterPage.class);
+public class NativeCreateLetterPage extends AbstractPage implements GmailCreateLetterPage {
+    private static final Logger log = LogManager.getLogger(NativeCreateLetterPage.class);
 
-    @FindBy(xpath = "//*[@resource-id='composeto']")
+    @FindBy(id = "to")
     private WebElement recipientInput;
-    @FindBy(xpath = "//*[@resource-id='cmcsubj']")
+    @FindBy(id = "subject")
     private WebElement subjectInput;
-    @FindBy(xpath = "//*[@resource-id='cmcbody']")
+    @FindBy(xpath = "(//android.widget.EditText)[2]")
     private WebElement letterBodyInput;
 
-    @FindBy(xpath = "//*[@text='Надіслати']")
+    @FindBy(id = "send")
     private WebElement sentLetter;
-
 
     @Override
     public void inputRecipientLetter(String recipient) {

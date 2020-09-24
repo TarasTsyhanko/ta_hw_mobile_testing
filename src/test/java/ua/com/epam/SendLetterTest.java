@@ -21,6 +21,7 @@ public class SendLetterTest extends BaseTest {
     public void sentLetterTestCase() {
         sendLetterAction.openLoginForm();
         sendLetterAction.logInToAccountGmail(Properties.getLogin(), Properties.getPassword());
+
         Letter letter = FileReader.getLetter();
         sendLetterAction.createAndSendLetter(letter);
 

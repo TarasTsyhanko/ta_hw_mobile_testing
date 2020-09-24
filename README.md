@@ -9,7 +9,7 @@ testing Gmail app, mobile and desktop version,
 Using Page Factory Model ,maven and Allure Reporting.
 
 # Getting started
-mvn clean test
+mvn clean test -Dstrategy=native|web
 
 # Generate report 
 mvn allure:report ,
